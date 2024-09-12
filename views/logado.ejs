@@ -1,0 +1,30 @@
+<%- include("partials/header") %>
+
+<body>
+    <%- include("partials/navbar") %>
+    <div class="container pt-2">
+        <div class="bg-unifae text-center py-3 mb-3 shadow">
+            <h3>Crie suas perguntas</h3>
+            <p>Crie uma nova pergunta. O assunto pode ser dos mais diversos, desde algum assunto sobre seu curso, até uma pergunta do clima ou se você estiver afim de apenas bater um papo</p>
+            <a href="/createquestion" class="btn btn-unifae-blue">Crie aqui</a>
+        </div>
+        <div class="bg-unifae-blue py-3 text-center shadow">
+            <h3>Lista de perguntas</h3>
+            <% if(perguntas.length == 0){ %>
+                <b>Nenhuma pergunta cadastrada</b>
+            <% }else { %>
+            <% perguntas.forEach(pergunta => { %>
+                <a href="/detalhepergunta/<%= pergunta.id %>" class="d-block w-50 pergunta_responder p-3 mx-auto text-light text-decoration-none border border-dark border-2 rounded">
+                    <div class="d-flex justify-content-between">
+                        <h5><%= pergunta.titulo %></h5>
+                        <span><%= pergunta.createdAt %></span>
+                    </div>
+                    <p class="text-start"><%= pergunta.descricao %></p>
+                </a>
+                <br>
+            <% })} %>
+        </div>
+    </div>
+</body>
+
+<%- include("partials/footer") %>

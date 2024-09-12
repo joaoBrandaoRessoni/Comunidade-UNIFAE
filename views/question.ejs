@@ -1,0 +1,22 @@
+<%- include("partials/header") %>
+
+<body>
+    <%- include("partials/navbar") %>
+    <div class="container d-flex justify-content-center align-items-center h-100 bg-white">
+        <form method="post" action="/savequestion" class="row p-3 gap-3 justify-content-center shadow">
+            <h1>Crie sua pergunta</h1>
+            <hr>
+            <label class="col-12">
+                <span>Título</span>
+                <input type="text" name="titulo" class="form-control" required>
+            </label>
+            <label class="col-12">
+                <span>Descrição</span>
+                <textarea name="descricao" class="form-control" required></textarea>
+            </label>
+            <button type="submit" class="btn btn-unifae-blue col-auto">Salvar</button>
+        </form>
+    </div>
+</body>
+
+<%- include("partials/footer") %>

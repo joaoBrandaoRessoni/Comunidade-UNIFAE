@@ -1,0 +1,68 @@
+:root{
+    --unifae-blue-pool: #3ABDB2;
+    --unifae-blue-pool-hover: #44d8cc;
+    --unifae-blue-sky: #3358a8;
+    --unifae-blue-sky-hover: #4372d7;
+    --transition-default: all 0.5s;
+}
+
+#img_logo{
+    width: 100px;
+}
+
+.btn-unifae{
+    background-color: var(--unifae-blue-pool) !important;
+    color: white !important;
+}
+
+.btn-unifae:hover{
+    background-color: var(--unifae-blue-pool-hover) !important;
+    color: white !important;
+}
+
+.btn-unifae-blue{
+    background-color: var(--unifae-blue-sky) !important;
+    color: white !important;
+}
+
+.btn-unifae-blue:hover{
+    background-color: var(--unifae-blue-sky-hover) !important;
+    color: white !important;
+}
+
+.bg-unifae{
+    background-color: var(--unifae-blue-pool) !important;
+    color: white !important;
+}
+
+.bg-unifae-blue{
+    background-color: var(--unifae-blue-sky) !important;
+    color: white !important;
+}
+
+.pergunta_responder{
+    transition: var(--transition-default) !important;
+}
+
+.pergunta_responder:hover{
+    cursor: pointer;
+    background-color: #2d4d92;
+    box-shadow: rgb(0, 0, 0) 3px 3px 6px 0px inset, rgba(0, 0, 0, 0.5) -3px -3px 6px 1px inset;
+}
+
+body{
+    background-color: rgb(246, 246, 246);
+    height: 100% !important;
+}
+
+html{
+    height: 100%;
+}
+
+#grupo_inicial{
+    height: 100%;
+}
+
+.shadow{
+    box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.7) !important;
+}

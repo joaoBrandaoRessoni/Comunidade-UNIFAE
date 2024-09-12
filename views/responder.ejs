@@ -1,0 +1,49 @@
+<%- include("partials/header") %>
+
+<body>
+    <%- include("partials/navbar") %>
+    <div class="container bg-white p-5">
+        <div class="border border-2 py-2 px-3 mb-3 rounded">
+            <div class="d-flex justify-content-between align-items-center">
+                <h3><%= pergunta.titulo %></h3>
+                <b class="d-none d-md-block"><%= pergunta.createdAt %></b>
+            </div>
+            <hr>
+            <p><%= pergunta.descricao %></p>
+        </div>
+        <hr>
+
+        <h3><%= respostas.length %> Respostas</h3>
+
+        <div class="alert alert-primary">
+            Se não encontrar uma resposta ou pergunta satisfatório, <a href="/createquestion">Pergunta à comunidade</a>
+        </div>
+
+        <% respostas.forEach(resposta => { %>
+            <div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1><%= resposta.titulo %></h1>
+                    <b><%= new Date(resposta.createdAt).toLocaleDateString() %></b>
+                </div>
+                <hr>
+                <p><%= resposta.descricao %></p>
+                <a href="/resposta/delete/<%= resposta.id %>" class="btn btn-danger">Excluir</a>
+            </div>
+            <hr>
+        <% }) %>
+
+        <form method="post" action="/saveresponse/<%= pergunta.id %>" class="row flex-column border border-2 align-items-center p-2 mb-4">
+            <label class="d-block mb-2">
+                <h5>Título</h5>
+                <input type="text" name="titulo" class="form-control" required>
+            </label>
+            <label class="d-block mb-2">
+                <h5>Sua resposta</h5>
+                <textarea name="descricao" class="form-control" required></textarea>
+            </label> 
+            <button type="submit" class="col-1 btn btn-unifae">Salvar</button>
+        </form>
+    </div>
+</body>
+
+<%- include("partials/footer") %>
